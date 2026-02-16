@@ -93,6 +93,13 @@ public class MasterSocket {
 	   System.out.println("Ntot: " + totalCount*numWorkers);
 	   System.out.println("Available processors: " + numWorkers);
 	   System.out.println("Time Duration (ms): " + (stopTime - startTime) + "\n");
+
+       // Ecriture des donénes dans un CSV
+       try (FileWriter fw = new FileWriter("scalabiliteForteSocket.csv", true)) {
+            fw.write((totalCount * numWorkers) + "," + numWorkers + "," + (stopTime - startTime) + "\n");
+       } catch (IOException e) {
+           throw new RuntimeException(e);
+       }
 	   
 	   System.out.println( (Math.abs((pi - Math.PI)) / Math.PI) +" "+ totalCount*numWorkers +" "+ numWorkers +" "+ (stopTime - startTime));
 
