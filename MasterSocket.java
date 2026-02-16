@@ -57,7 +57,7 @@ public class MasterSocket {
             writer[i] = new PrintWriter(new BufferedWriter(new OutputStreamWriter(sockets[i].getOutputStream())), true);
         }
 
-        totalCount = N_TOTAL / numWorkers;   // lancers par Worker
+        totalCount = N_TOTAL;   // lancers par Worker
         String message_to_send = String.valueOf(totalCount);
 
         String message_repeat = "y";
