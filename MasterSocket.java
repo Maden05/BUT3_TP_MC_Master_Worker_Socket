@@ -93,7 +93,7 @@ public class MasterSocket {
             System.out.println("Time Duration (ns): " + (stopTime - startTime) + "\n");
 
             // Écriture dans le CSV
-            try (FileWriter fw = new FileWriter("scalabiliteForteSocket.csv", true)) {
+            try (FileWriter fw = new FileWriter("scalabilite.csv", true)) {
                 fw.write((totalCount * numWorkers) + "," + numWorkers + "," + (stopTime - startTime) + "\n");
             } catch (IOException e) {
                 throw new RuntimeException(e);
